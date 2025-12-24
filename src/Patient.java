@@ -46,7 +46,6 @@ public class Patient {
         this.diagnosis = newDiagnosis;
     }
 
-    @Override
     public String toString() {
         return "Patient [id=" + id + ", name=" + name +
                 ", age=" + age + ", diagnosis=" + diagnosis + "]";

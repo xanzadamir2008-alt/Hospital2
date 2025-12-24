@@ -44,7 +44,6 @@ public class Appointment {
         this.date = newDate;
     }
 
-    @Override
     public String toString() {
         return "Appointment [id=" + appointmentId +
                 ", patient=" + patient +

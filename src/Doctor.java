@@ -44,7 +44,6 @@ public class Doctor {
         this.experienceYears += years;
     }
 
-    @Override
     public String toString() {
         return "Doctor [id=" + id + ", name=" + name +
                 ", specialization=" + specialization +
