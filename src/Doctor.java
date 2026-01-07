@@ -1,29 +1,32 @@
-public class Patient extends Person {
-    private int age;
-    private String diagnosis;
+public class Doctor extends Person {
+    private String specialization;
+    private int experienceYears;
 
-    public Patient(int id, String name, int age, String diagnosis) {
+    public Doctor(int id, String name, String specialization, int experienceYears) {
         super(id, name);
-        setAge(age);
-        this.diagnosis = diagnosis;
+        this.specialization = specialization;
+        setExperienceYears(experienceYears);
     }
 
-    public void setAge(int age) {
-        if (age >= 0) {
-            this.age = age;
+    public void setExperienceYears(int experienceYears) {
+        if (experienceYears >= 0) {
+            this.experienceYears = experienceYears;
         }
     }
 
     @Override
     public void work() {
-        System.out.println("Patient " + name + " is receiving treatment");
+        System.out.println("Doctor " + name + " is treating patients");
+    }
+
+    public boolean isSenior() {
+        return experienceYears >= 10;
     }
 
     @Override
     public String toString() {
-        return "Patient [name=" + name +
-                ", age=" + age +
-                ", diagnosis=" + diagnosis + "]";
+        return "Doctor [name=" + name +
+                ", specialization=" + specialization +
+                ", experience=" + experienceYears + "]";
     }
 }
-
