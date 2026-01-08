@@ -1,52 +1,33 @@
-public class Doctor {
-    private int id;
-    private String name;
+public class Doctor extends Person {
     private String specialization;
     private int experienceYears;
 
-    public Doctor() {
-        this.id = 0;
-        this.name = "Unknown";
-        this.specialization = "General";
-        this.experienceYears = 0;
-    }
-
     public Doctor(int id, String name, String specialization, int experienceYears) {
-        this.id = id;
-        this.name = name;
+        super(id, name);
         this.specialization = specialization;
-        this.experienceYears = experienceYears;
+        setExperienceYears(experienceYears);
     }
 
-    // Getters & Setters
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
-
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
-
-    public String getSpecialization() { return specialization; }
-    public void setSpecialization(String specialization) {
-        this.specialization = specialization;
-    }
-
-    public int getExperienceYears() { return experienceYears; }
     public void setExperienceYears(int experienceYears) {
-        this.experienceYears = experienceYears;
+        if (experienceYears >= 0) {
+            this.experienceYears = experienceYears;
+        }
     }
 
-    // Additional methods
-    public boolean isSeniorDoctor() {
+    @Override
+    public void work() {
+        System.out.println("Doctor " + name + " is treating patients");
+    }
+
+    public boolean isSenior() {
         return experienceYears >= 10;
     }
 
-    public void addExperience(int years) {
-        this.experienceYears += years;
-    }
-
+    @Override
     public String toString() {
-        return "Doctor [id=" + id + ", name=" + name +
+        return "Doctor [name=" + name +
                 ", specialization=" + specialization +
-                ", experienceYears=" + experienceYears + "]";
+                ", experience=" + experienceYears + "]";
     }
 }
+
